@@ -1,0 +1,6 @@
+@startuml
+class FileRequest {
+    + FileName : string <<get>> <<set>>
+    + Status : int <<get>> <<set>>
+}
+@enduml

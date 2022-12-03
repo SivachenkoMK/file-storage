@@ -1,0 +1,7 @@
+@startuml
+class ChangeTypeOfFileStatusToByte {
+    + <<override>> Up() : void
+    + <<override>> Down() : void
+}
+Migration <|-- ChangeTypeOfFileStatusToByte
+@enduml

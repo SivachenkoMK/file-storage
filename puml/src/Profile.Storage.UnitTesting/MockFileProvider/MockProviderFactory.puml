@@ -1,0 +1,6 @@
+@startuml
+class MockProviderFactory {
+    + Get(type:StorageType) : IFileProvider
+}
+IFileProviderFactory <|-- MockProviderFactory
+@enduml

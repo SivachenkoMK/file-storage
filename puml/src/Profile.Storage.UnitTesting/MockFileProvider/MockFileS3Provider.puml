@@ -1,0 +1,9 @@
+@startuml
+class MockFileS3Provider {
+    + Dispose() : void
+    + GetFileAsync(name:string, token:CancellationToken) : Task<Stream>
+    + SaveFileAsync(name:string, file:Stream, token:CancellationToken) : Task
+    + DeleteFilesAsync(names:IEnumerable<string>, token:CancellationToken) : Task
+}
+IFileProvider <|-- MockFileS3Provider
+@enduml

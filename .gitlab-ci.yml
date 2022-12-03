@@ -1,0 +1,67 @@
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ''
+  DOCKER_HOST: tcp://docker:2375
+  PUBLISH_FOLDER_NAME: "publish"
+  APP_FOLDER: "app"
+  MIGRATIONS_FOLDER: "migrations"
+
+.docker_common:
+  services:
+    - docker:19.03.13-dind
+  tags:
+    - docker-runner
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+
+stages:
+  - build
+  - test
+  - publish
+
+build_job:   
+  stage: build
+  tags:
+    - dotnet-runner-v5
+  script:
+    - dotnet publish $PROJECT -c Release -o "$PUBLISH_FOLDER_NAME/$APP_FOLDER" -p:Version=1.04
+  only: 
+    - branches
+  artifacts:
+    expire_in: 7 days
+    paths:
+      - "$PUBLISH_FOLDER_NAME/$APP_FOLDER"
+      - "$PUBLISH_FOLDER_NAME/$MIGRATIONS_FOLDER"
+    
+
+test_job:
+  stage: test
+  tags:
+    - dotnet-runner-v5
+  script: 
+    - 'dotnet test --test-adapter-path:. --logger:"junit;LogFilePath=..\artifacts\{assembly}-test-result.xml;MethodFormat=Class;FailureBodyFormat=Verbose"'
+  artifacts:
+    paths:
+      - ./**/*test-result.xml
+    reports:
+      junit:
+        - ./**/*test-result.xml
+  only:
+    - branches
+  dependencies:
+    - build_job
+
+publish_job:
+  extends:
+    .docker_common
+  stage: publish
+  tags:
+    - docker-runner
+  script:
+    - docker build --rm -t registry.gitlab.com/pro-file/profile-storage --build-arg PUBLISH_FOLDER_NAME="publish" --build-arg APP_FOLDER="app" --build-arg ENTRY_POINT="Profile.Storage.dll" -f ./docker/app.dockerfile .
+    - docker push registry.gitlab.com/pro-file/profile-storage
+  only:
+    - branches
+  dependencies:
+    - build_job
+    - test_job

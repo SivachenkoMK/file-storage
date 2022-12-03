@@ -1,0 +1,5 @@
+@startuml
+interface IFileProviderFactory {
+    Get(type:StorageType) : IFileProvider
+}
+@enduml

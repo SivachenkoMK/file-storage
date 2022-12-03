@@ -1,0 +1,10 @@
+@startuml
+class FileMetadata <<sealed>> {
+    + Name : string <<get>> <<set>>
+    + ContentType : string <<get>> <<set>>
+}
+FileMetadata --> "Id" Guid
+FileMetadata --> "StorageType" StorageType
+FileMetadata --> "DateLoaded" DateTime
+FileMetadata --> "FileStatus" ExistenceStatus
+@enduml

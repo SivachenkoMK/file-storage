@@ -1,0 +1,8 @@
+@startuml
+class FileStorageMetadataMapping <<sealed>> {
+    + Map(builder:EntityTypeBuilder<FileMetadata>) : void
+}
+class "IEntityMappingConfiguration`1"<T> {
+}
+"IEntityMappingConfiguration`1" "<FileMetadata>" <|-- FileStorageMetadataMapping
+@enduml

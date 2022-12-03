@@ -1,0 +1,9 @@
+@startuml
+class S3Config {
+    + AccessKey : string <<get>> <<set>>
+    + SecretKey : string <<get>> <<set>>
+    + BucketName : string <<get>> <<set>>
+    + EndpointUrl : string <<get>> <<set>>
+    + ForcePathStyle : bool <<get>> <<set>>
+}
+@enduml

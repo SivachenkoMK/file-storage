@@ -1,0 +1,6 @@
+@startuml
+class StripeController {
+    + <<async>> Webhook() : Task<IActionResult>
+}
+ControllerBase <|-- StripeController
+@enduml

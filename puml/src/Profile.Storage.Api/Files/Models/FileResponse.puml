@@ -1,0 +1,7 @@
+@startuml
+class FileResponse <<sealed>> {
+    + Name : string <<get>> <<set>>
+    + SizeBytes : long <<get>> <<set>>
+}
+FileResponse --> "Id" Guid
+@enduml

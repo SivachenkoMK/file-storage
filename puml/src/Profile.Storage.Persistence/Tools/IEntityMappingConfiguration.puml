@@ -1,0 +1,5 @@
+@startuml
+interface "IEntityMappingConfiguration`1"<T> {
+    Map(builder:EntityTypeBuilder<T>) : void
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class ChangeTypeOfFileStatusColumnToBinary {
+    + <<override>> Up() : void
+    + <<override>> Down() : void
+}
+Migration <|-- ChangeTypeOfFileStatusColumnToBinary
+@enduml

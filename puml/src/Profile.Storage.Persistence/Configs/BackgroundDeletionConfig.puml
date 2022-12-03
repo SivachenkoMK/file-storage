@@ -1,0 +1,6 @@
+@startuml
+class BackgroundDeletionConfig {
+    + DeletionIntervalFromSeconds : int <<get>> <<set>>
+    + FileExpiryTimeFromDays : int <<get>> <<set>>
+}
+@enduml

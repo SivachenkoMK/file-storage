@@ -1,0 +1,7 @@
+@startuml
+class CreateMetadataTable {
+    + <<override>> Up() : void
+    + <<override>> Down() : void
+}
+Migration <|-- CreateMetadataTable
+@enduml

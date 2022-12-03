@@ -1,0 +1,5 @@
+@startuml
+class DbConfig {
+    + DbConnection : string <<get>> <<set>>
+}
+@enduml

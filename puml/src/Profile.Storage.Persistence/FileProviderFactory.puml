@@ -1,0 +1,7 @@
+@startuml
+class FileProviderFactory <<sealed>> {
+    + FileProviderFactory(storageConfig:IOptions<StorageConfig>, s3Config:IOptions<S3Config>)
+    + Get(type:StorageType) : IFileProvider
+}
+IFileProviderFactory <|-- FileProviderFactory
+@enduml

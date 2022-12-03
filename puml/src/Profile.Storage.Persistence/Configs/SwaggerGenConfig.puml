@@ -1,0 +1,6 @@
+@startuml
+class SwaggerGenConfig {
+    + FilePath : string <<get>> <<set>>
+    + XmlPattern : string <<get>> <<set>>
+}
+@enduml

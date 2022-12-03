@@ -1,0 +1,7 @@
+@startuml
+class FileProviderFactoryTests {
+    + IsMemoryProvider() : void
+    + IsLocalProvider() : void
+    + IsS3Provider() : void
+}
+@enduml

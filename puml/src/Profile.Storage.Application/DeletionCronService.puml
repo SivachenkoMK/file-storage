@@ -1,0 +1,6 @@
+@startuml
+class DeletionCronService {
+    + DeletionCronService(factory:IServiceProvider, config:IOptions<BackgroundDeletionConfig>)
+}
+BackgroundService <|-- DeletionCronService
+@enduml

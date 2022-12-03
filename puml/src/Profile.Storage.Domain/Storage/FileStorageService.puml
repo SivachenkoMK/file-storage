@@ -1,0 +1,10 @@
+@startuml
+class FileStorageService <<sealed>> {
+    + FileStorageService(factory:IFileProviderFactory, repository:IFileMetadataRepository)
+    + <<async>> SaveFileAsync(metadata:FileMetadata, file:Stream, token:CancellationToken) : Task
+    + <<async>> GetFileAsync(id:Guid, token:CancellationToken) : Task<(Stream file, FileMetadata metadata)>
+    + <<async>> DeleteFileByIdAsync(id:Guid, token:CancellationToken) : Task
+    + <<async>> DeleteFilesAsync(metadata:IEnumerable<FileMetadata>, token:CancellationToken) : Task
+}
+IFileStorageService <|-- FileStorageService
+@enduml

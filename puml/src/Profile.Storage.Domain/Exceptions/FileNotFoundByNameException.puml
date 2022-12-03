@@ -1,0 +1,7 @@
+@startuml
+class FileNotFoundByNameException {
+    + FileNotFoundByNameException()
+    + FileNotFoundByNameException(message:string?)
+}
+Exception <|-- FileNotFoundByNameException
+@enduml

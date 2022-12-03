@@ -1,0 +1,9 @@
+@startuml
+class FileMemoryProvider {
+    + <<async>> GetFileAsync(name:string, token:CancellationToken) : Task<Stream>
+    + <<async>> SaveFileAsync(name:string, file:Stream, token:CancellationToken) : Task
+    + DeleteFilesAsync(names:IEnumerable<string>, token:CancellationToken) : Task
+    + Dispose() : void
+}
+IFileProvider <|-- FileMemoryProvider
+@enduml

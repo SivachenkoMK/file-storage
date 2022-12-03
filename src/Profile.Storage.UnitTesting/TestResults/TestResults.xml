@@ -1,0 +1,17 @@
+<testsuites>
+  <testsuite name="Profile.Storage.UnitTesting.dll" tests="3" skipped="0" failures="0" errors="0" time="0.002869" timestamp="2022-01-11T19:54:02" hostname="DESKTOP-H8S1GHI" id="0" package="Profile.Storage.UnitTesting.dll">
+    <properties />
+    <testcase classname="Profile.Storage.UnitTesting.FileProviderFactoryTests" name="IsS3Provider" time="0.0026648" />
+    <testcase classname="Profile.Storage.UnitTesting.FileProviderFactoryTests" name="IsLocalProvider" time="0.0001145" />
+    <testcase classname="Profile.Storage.UnitTesting.FileProviderFactoryTests" name="IsMemoryProvider" time="0.0000897" />
+    <system-out>
+Test Framework Informational Messages:
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.3+1b45f5407b (64-bit .NET 5.0.10)
+[xUnit.net 00:00:00.58]   Discovering: Profile.Storage.UnitTesting
+[xUnit.net 00:00:00.60]   Discovered:  Profile.Storage.UnitTesting
+[xUnit.net 00:00:00.61]   Starting:    Profile.Storage.UnitTesting
+[xUnit.net 00:00:00.66]   Finished:    Profile.Storage.UnitTesting
+</system-out>
+    <system-err></system-err>
+  </testsuite>
+</testsuites>

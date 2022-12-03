@@ -1,0 +1,9 @@
+@startuml
+class MockFileLocalProvider {
+    + Dispose() : void
+    + GetFileAsync(name:string, token:CancellationToken) : Task<Stream>
+    + SaveFileAsync(name:string, file:Stream, token:CancellationToken) : Task
+    + DeleteFilesAsync(names:IEnumerable<string>, token:CancellationToken) : Task
+}
+IFileProvider <|-- MockFileLocalProvider
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class FileMetadataNotFoundByIdException {
+    + FileMetadataNotFoundByIdException()
+    + FileMetadataNotFoundByIdException(message:string?)
+}
+Exception <|-- FileMetadataNotFoundByIdException
+@enduml

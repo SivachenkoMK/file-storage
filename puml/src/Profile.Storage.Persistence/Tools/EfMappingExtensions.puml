@@ -1,0 +1,5 @@
+@startuml
+class EfMappingExtensions <<static>> {
+    + {static} RegisterEntityMapping(builder:ModelBuilder) : ModelBuilder
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class FluentConfig {
+    + {static} ConfigureMigrator(connection:string) : IServiceProvider
+}
+@enduml

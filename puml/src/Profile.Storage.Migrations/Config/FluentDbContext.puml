@@ -1,0 +1,7 @@
+@startuml
+class StorageDbContext <<sealed>> {
+    + StorageDbContext(connectionStringString:string)
+    + {static} InitMigrations(connection:string) : void
+}
+DbContext <|-- StorageDbContext
+@enduml

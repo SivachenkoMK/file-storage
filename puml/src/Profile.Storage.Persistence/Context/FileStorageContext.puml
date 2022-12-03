@@ -1,0 +1,6 @@
+@startuml
+class FileStorageContext <<sealed>> {
+    + FileStorageContext(config:IOptions<DbConfig>)
+}
+DbContext <|-- FileStorageContext
+@enduml

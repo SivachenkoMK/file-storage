@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Profile.Storage</RootNamespace>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.15.0" />
+        <PackageReference Include="Serilog" Version="2.11.0-dev-01371" />
+        <PackageReference Include="Serilog.AspNetCore" Version="4.1.1-dev-00241" />
+        <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1-dev-00879" />
+        <PackageReference Include="Serilog.Sinks.Seq" Version="5.1.0" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.2.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.2.3" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Profile.Storage.Api\Profile.Storage.Api.csproj" />
+      <ProjectReference Include="..\Profile.Stripe.Api\Profile.Stripe.Api.csproj" />
+      <ProjectReference Include="..\Profile.Storage.Application\Profile.Storage.Application.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="..\..\.gitlab-ci.yml">
+        <Link>.gitlab-ci.yml</Link>
+      </Content>
+      <Content Include="..\..\docker\app.dockerfile">
+        <Link>app.dockerfile</Link>
+      </Content>
+      <Content Include="..\..\docker\docker-compose.yml">
+        <Link>docker-compose.yml</Link>
+      </Content>
+      <Content Include="..\..\Profile.Code.Rules.ruleset">
+        <Link>Profile.Code.Rules.ruleset</Link>
+      </Content>
+      <Content Include="..\..\README.md">
+        <Link>README.md</Link>
+      </Content>
+    </ItemGroup>
+</Project>
+    

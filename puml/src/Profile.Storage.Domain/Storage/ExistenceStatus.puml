@@ -1,0 +1,6 @@
+@startuml
+enum ExistenceStatus {
+    Exists= 1,
+    Deleted= 2,
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class StorageConfig {
+    + RootFolder : string <<get>> <<set>>
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class FileManagementController {
+    + FileManagementController(logger:ILogger<FileManagementController>, storageService:IFileStorageService)
+    + <<async>> SaveFile(files:IEnumerable<IFormFile>, token:CancellationToken) : Task<ActionResult>
+    + <<async>> GetModels(id:Guid, token:CancellationToken) : Task<ActionResult>
+    + <<async>> DeleteFile(id:Guid, token:CancellationToken) : Task<ActionResult>
+}
+ControllerBase <|-- FileManagementController
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class FileMetadataRepository <<sealed>> {
+    + FileMetadataRepository(dbContext:FileStorageContext)
+    + <<async>> SaveMetadataAsync(metadata:FileMetadata, token:CancellationToken) : Task
+    + <<async>> GetMetadataOfFilesAsync(lambda:Expression<Func<FileMetadata, bool>>, token:CancellationToken) : Task<IEnumerable<FileMetadata>>
+    + <<async>> MarkFilesAsDeletedAsync(metadata:IEnumerable<FileMetadata>, token:CancellationToken) : Task
+    + GetMetadataOfFiles(lambda:Expression<Func<FileMetadata, bool>>) : Task<List<FileMetadata>>
+}
+IFileMetadataRepository <|-- FileMetadataRepository
+@enduml

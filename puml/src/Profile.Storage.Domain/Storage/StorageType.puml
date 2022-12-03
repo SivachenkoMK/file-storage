@@ -1,0 +1,7 @@
+@startuml
+enum StorageType {
+    FileSystem= 1,
+    AmazonS3= 2,
+    Memory= 4,
+}
+@enduml

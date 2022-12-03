@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "profile_storage": {
+      "commandName": "Project",
+      "dotnetRunMessages": "true",
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:5601;http://localhost:5600",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DBCONFIG__DBCONNECTION": "Server=localhost;Port=3608;Database=profile.fs;Uid=root;Pwd=Qwerty123;SslMode=none;"
+      }
+    }
+  }
+}

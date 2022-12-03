@@ -1,0 +1,8 @@
+@startuml
+interface IFileStorageService {
+    SaveFileAsync(metadata:FileMetadata, file:Stream, token:CancellationToken) : Task
+    GetFileAsync(id:Guid, token:CancellationToken) : Task<(Stream file, FileMetadata metadata)>
+    DeleteFileByIdAsync(id:Guid, token:CancellationToken) : Task
+    DeleteFilesAsync(metadata:IEnumerable<FileMetadata>, token:CancellationToken) : Task
+}
+@enduml

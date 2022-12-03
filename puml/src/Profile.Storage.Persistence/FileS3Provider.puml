@@ -1,0 +1,10 @@
+@startuml
+class FileS3Provider {
+    + FileS3Provider(config:IOptions<S3Config>)
+    + <<async>> GetFileAsync(name:string, token:CancellationToken) : Task<Stream>
+    + <<async>> SaveFileAsync(name:string, file:Stream, token:CancellationToken) : Task
+    + <<async>> DeleteFilesAsync(names:IEnumerable<string>, token:CancellationToken) : Task
+    + Dispose() : void
+}
+IFileProvider <|-- FileS3Provider
+@enduml

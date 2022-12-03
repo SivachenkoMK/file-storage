@@ -1,0 +1,7 @@
+@startuml
+class AlterFileStatusAsByte {
+    + <<override>> Up() : void
+    + <<override>> Down() : void
+}
+Migration <|-- AlterFileStatusAsByte
+@enduml
